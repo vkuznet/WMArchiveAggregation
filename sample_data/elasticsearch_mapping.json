@@ -1,0 +1,42 @@
+{
+	"mappings": {
+		"daily": {
+			"properties": {
+				"date": { "type": "date" },
+				"stats": {
+					"type": "nested",
+					"properties": {
+						"scope": {
+							"type": "object",
+							"properties": {
+								"host": { "type": "string", "index": "not_analyzed" },
+								"site": { "type": "string", "index": "not_analyzed" },
+								"jobstate": { "type": "string", "index": "not_analyzed" },
+								"jobtype": { "type": "string", "index": "not_analyzed" }
+							}
+						},
+						"performance": {
+							"type": "object",
+							"properties": {
+								"cpu": {
+									"type": "object",
+									"properties": {
+										"TotalJobTime": { "type": "long" },
+										"TotalJobCPU": { "type": "double" }
+									}
+								},
+								"storage": {
+									"type": "object",
+									"properties": {
+										"readTotalMB": { "type": "double" },
+										"writeTotalMB": {"type": "double"}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
