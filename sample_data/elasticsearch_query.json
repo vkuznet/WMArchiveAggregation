@@ -1,0 +1,20 @@
+{
+	"size": 0,
+	"query": {
+	  "match_all": {}
+	},
+	"aggs": {
+	  "hosts": {
+		  "nested": {
+			  "path": "stats"
+		  },
+		  "aggs": {
+			  "distinct": {
+				  "terms": {
+					  "field": "stats.scope.host"
+				  }
+			  }
+		  }
+	  }
+	}
+}
