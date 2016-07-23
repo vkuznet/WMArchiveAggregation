@@ -13,7 +13,7 @@ Follow this procedure to generate sample data from the HDFS and import them to y
 - Run the `WMArchive/bin/myspark` script with the `RecordAggregator` on the data you want to aggregate:
 
 	```
-	./bin/myspark --hdir=hdfs:///cms/wmarchive/test/avro/2016/06/28 --schema=hdfs:///cms/wmarchive/test/avro/schemas/current.avsc --script=src/python/WMArchive/PySpark/RecordAggregator.py`
+	./bin/myspark --hdir=hdfs:///cms/wmarchive/test/avro/2016/06/28 --schema=hdfs:///cms/wmarchive/test/avro/schemas/current.avsc --script=src/python/WMArchive/PySpark/RecordAggregator.py
 	```
 	
 	The script will store its result in MongoDB and also produce a JSON file with its output.
