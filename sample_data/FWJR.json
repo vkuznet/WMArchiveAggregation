@@ -1,0 +1,294 @@
+{
+	"_id" : ObjectId("579f60f6e7f8e678b4042088"),
+	"PFNArrayRef" : [
+		"inputPFNs",
+		"outputPFNs",
+		"pfn"
+	],
+	"task" : "/vlimant_task_EXO-RunIIWinter15wmLHE-03007__v1_T_160731_164943_8282/EXO-RunIIWinter15wmLHE-03007_0/EXO-RunIIWinter15wmLHE-03007_0MergeLHEoutput/EXO-RunIISummer15GS-06741_0/EXO-RunIISummer15GS-06741_0MergeRAWSIMoutput/EXO-RunIIFall15DR76-02829_0/EXO-RunIIFall15DR76-02829_1",
+	"skippedFiles" : [ ],
+	"wmaid" : "9a0864a42dc917486ca89e5117ddfdb6",
+	"wmats" : 1470062838.91047,
+	"fallbackFiles" : [ ],
+	"LFNArray" : [
+		"/store/unmerged/logs/prod/2016/8/1/vlimant_task_EXO-RunIIWinter15wmLHE-03007__v1_T_160731_164943_8282/EXO-RunIIWinter15wmLHE-03007_0/EXO-RunIIWinter15wmLHE-03007_0MergeLHEoutput/EXO-RunIISummer15GS-06741_0/EXO-RunIISummer15GS-06741_0MergeRAWSIMoutput/EXO-RunIIFall15DR76-02829_0/EXO-RunIIFall15DR76-02829_1/0000/0/c937afa2-57e0-11e6-8042-a0369f23d008-0-0-logArchive.tar.gz",
+		"/store/unmerged/RunIIFall15DR76/DMV_NNPDF30_Vector_Mphi-1000_Mchi-300_gSM-0p25_gDM-1p0_v2_13TeV-powheg/AODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v7/10000/647E6F96-E157-E611-9091-0025905A60D2.root",
+		"/store/unmerged/RunIIFall15DR76/DMV_NNPDF30_Vector_Mphi-1000_Mchi-300_gSM-0p25_gDM-1p0_v2_13TeV-powheg/GEN-SIM-RAW/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v7/10000/368379C8-BA57-E611-AE47-0025905A60B0.root",
+		"/store/unmerged/RunIIFall15DR76/DMV_NNPDF30_Vector_Mphi-1000_Mchi-300_gSM-0p25_gDM-1p0_v2_13TeV-powheg/DQMIO/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v7/10000/F0867B96-E157-E611-9091-0025905A60D2.root"
+	],
+	"meta_data" : {
+		"jobstate" : "success",
+		"ts" : 1470062605,
+		"fwjr_id" : "1639367-0",
+		"host" : "cmssrv218.fnal.gov",
+		"agent_ver" : "1.0.17.patch1",
+		"jobtype" : "Processing"
+	},
+	"steps" : [
+		{
+			"status" : 0,
+			"errors" : [ ],
+			"logs" : {
+
+			},
+			"input" : [ ],
+			"stop" : 1470062497,
+			"site" : "T1_US_FNAL_Disk",
+			"analysis" : {
+
+			},
+			"start" : 1470062492,
+			"cleanup" : {
+
+			},
+			"output" : [ ],
+			"performance" : {
+				"multicore" : {
+
+				},
+				"storage" : {
+
+				},
+				"cpu" : {
+
+				},
+				"memory" : {
+
+				}
+			},
+			"name" : "stageOut1"
+		},
+		{
+			"status" : 0,
+			"errors" : [ ],
+			"logs" : {
+
+			},
+			"input" : [ ],
+			"stop" : 1470062500,
+			"site" : "T1_US_FNAL_Disk",
+			"analysis" : {
+
+			},
+			"start" : 1470062497,
+			"cleanup" : {
+
+			},
+			"output" : [
+				{
+					"runs" : [ ],
+					"adler32" : "58f49504",
+					"inputLFNs" : [ ],
+					"inputPFNs" : [ ],
+					"module_label" : "logArchive",
+					"outputLFNs" : [
+						0
+					],
+					"merged" : false,
+					"cksum" : "837935049",
+					"events" : 0,
+					"outputPFNs" : [ ],
+					"size" : 0
+				}
+			],
+			"performance" : {
+				"multicore" : {
+
+				},
+				"storage" : {
+
+				},
+				"cpu" : {
+
+				},
+				"memory" : {
+
+				}
+			},
+			"name" : "logArch1"
+		},
+		{
+			"status" : 0,
+			"errors" : [ ],
+			"logs" : {
+
+			},
+			"input" : [
+				{
+					"runs" : [
+						{
+							"runNumber" : 1,
+							"lumis" : [
+								103,
+								104,
+								149,
+								150,
+								291,
+								292
+							]
+						}
+					],
+					"input_source_class" : "PoolSource",
+					"input_type" : "primaryFiles",
+					"lfn" : 2,
+					"pfn" : 0,
+					"catalog" : "",
+					"module_label" : "source",
+					"guid" : "368379C8-BA57-E611-AE47-0025905A60B0",
+					"events" : 1200
+				}
+			],
+			"stop" : 1470062492,
+			"site" : "T1_US_FNAL_Disk",
+			"analysis" : {
+
+			},
+			"start" : 1470053551,
+			"cleanup" : {
+
+			},
+			"output" : [
+				{
+					"branch_hash" : "a3aab68016242ab1dbe551dc2c2862bf",
+					"guid" : "647E6F96-E157-E611-9091-0025905A60D2",
+					"size" : 225292574,
+					"applicationName" : "cmsRun",
+					"acquisitionEra" : "RunIIFall15DR76",
+					"applicationVersion" : "CMSSW_7_6_1",
+					"inputPFNs" : [
+						0
+					],
+					"configURL" : "https://cmsweb.cern.ch/couchdb;;reqmgr_config_cache;;22c60892e094b683aa6a31e9f0928d43",
+					"outputDataset" : "/DMV_NNPDF30_Vector_Mphi-1000_Mchi-300_gSM-0p25_gDM-1p0_v2_13TeV-powheg/RunIIFall15DR76-PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v7/AODSIM",
+					"outputPFNs" : [
+						2
+					],
+					"inputLFNs" : [
+						2
+					],
+					"events" : 1200,
+					"merged" : false,
+					"validStatus" : "PRODUCTION",
+					"adler32" : "3779a07d",
+					"ouput_module_class" : "PoolOutputModule",
+					"globalTag" : "76X_mcRun2_asymptotic_v12",
+					"catalog" : "",
+					"module_label" : "AODSIMoutput",
+					"cksum" : "1847137290",
+					"StageOutCommand" : "stageout-xrdcp-fnal",
+					"runs" : [
+						{
+							"runNumber" : 1,
+							"lumis" : [
+								103,
+								104,
+								149,
+								150,
+								291,
+								292
+							]
+						}
+					],
+					"outputLFNs" : [
+						1
+					],
+					"processingVer" : 7,
+					"processingStr" : "PU25nsData2015v1_76X_mcRun2_asymptotic_v12",
+					"prep_id" : "EXO-RunIIFall15DR76-02829"
+				},
+				{
+					"branch_hash" : "d41d8cd98f00b204e9800998ecf8427e",
+					"guid" : "F0867B96-E157-E611-9091-0025905A60D2",
+					"size" : 1973027,
+					"applicationName" : "cmsRun",
+					"acquisitionEra" : "RunIIFall15DR76",
+					"applicationVersion" : "CMSSW_7_6_1",
+					"inputPFNs" : [
+						0
+					],
+					"configURL" : "https://cmsweb.cern.ch/couchdb;;reqmgr_config_cache;;22c60892e094b683aa6a31e9f0928d43",
+					"outputDataset" : "/DMV_NNPDF30_Vector_Mphi-1000_Mchi-300_gSM-0p25_gDM-1p0_v2_13TeV-powheg/RunIIFall15DR76-PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v7/DQMIO",
+					"outputPFNs" : [
+						1
+					],
+					"inputLFNs" : [
+						2
+					],
+					"events" : 0,
+					"merged" : false,
+					"validStatus" : "PRODUCTION",
+					"adler32" : "27c547c1",
+					"ouput_module_class" : "DQMRootOutputModule",
+					"globalTag" : "76X_mcRun2_asymptotic_v12",
+					"catalog" : "",
+					"module_label" : "DQMoutput",
+					"cksum" : "283358944",
+					"StageOutCommand" : "stageout-xrdcp-fnal",
+					"runs" : [
+						{
+							"runNumber" : 1,
+							"lumis" : [
+								103,
+								104,
+								149,
+								150,
+								291,
+								292
+							]
+						}
+					],
+					"outputLFNs" : [
+						3
+					],
+					"processingVer" : 7,
+					"processingStr" : "PU25nsData2015v1_76X_mcRun2_asymptotic_v12",
+					"prep_id" : "EXO-RunIIFall15DR76-02829"
+				}
+			],
+			"performance" : {
+				"multicore" : {
+
+				},
+				"storage" : {
+					"writeTotalMB" : 214.856,
+					"readPercentageOps" : 3.33333333333,
+					"readAveragekB" : 9041.7204736,
+					"readTotalMB" : 529.788309,
+					"readNumOps" : 18,
+					"readCachePercentageOps" : 0,
+					"readMBSec" : 0.0522352670964,
+					"readMaxMSec" : 2573.06,
+					"readTotalSecs" : 0,
+					"writeTotalSecs" : 2573100
+				},
+				"cpu" : {
+					"TotalJobCPU" : 8683.41,
+					"EventThroughput" : 0.137002,
+					"AvgEventTime" : 7.2209,
+					"MaxEventTime" : 43.6308,
+					"TotalJobTime" : 8780.76,
+					"TotalLoopCPU" : 8662.91,
+					"MinEventTime" : 1.81228
+				},
+				"memory" : {
+					"PeakValueRss" : 1489.93,
+					"PeakValueVsize" : 2026.48
+				}
+			},
+			"name" : "cmsRun1"
+		}
+	],
+	"PFNArray" : [
+		"root://cmsxrootd-site.fnal.gov//store/unmerged/RunIIFall15DR76/DMV_NNPDF30_Vector_Mphi-1000_Mchi-300_gSM-0p25_gDM-1p0_v2_13TeV-powheg/GEN-SIM-RAW/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v7/10000/368379C8-BA57-E611-AE47-0025905A60B0.root",
+		"root://cmsdcadisk01.fnal.gov//dcache/uscmsdisk/store/unmerged/RunIIFall15DR76/DMV_NNPDF30_Vector_Mphi-1000_Mchi-300_gSM-0p25_gDM-1p0_v2_13TeV-powheg/DQMIO/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v7/10000/F0867B96-E157-E611-9091-0025905A60D2.root",
+		"root://cmsdcadisk01.fnal.gov//dcache/uscmsdisk/store/unmerged/RunIIFall15DR76/DMV_NNPDF30_Vector_Mphi-1000_Mchi-300_gSM-0p25_gDM-1p0_v2_13TeV-powheg/AODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v7/10000/647E6F96-E157-E611-9091-0025905A60D2.root"
+	],
+	"LFNArrayRef" : [
+		"fallbackFiles",
+		"outputLFNs",
+		"lfn",
+		"skippedFiles",
+		"inputLFNs"
+	],
+	"stype" : "avroio"
+}
