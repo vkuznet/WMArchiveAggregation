@@ -7,7 +7,7 @@ else
 fi
 
 export WMAROOT=/Users/knl/Projects/wmarchive/WMArchive
-export WMA_STATIC_ROOT=$WMAROOT/data
+export WMA_STATIC_ROOT=$WMAROOT/src
 export WMCOREROOT=/Users/knl/Projects/wmarchive/WMCore
 export PYTHONPATH=$PYTHONPATH:$WMAROOT/src/python:$WMAROOT/etc:$WMCOREROOT/src/python
 export PYTHONPATH=$PWD/python:$PYTHONPATH
@@ -18,11 +18,5 @@ fi
 echo $PYTHONPATH
 
 ./stop_server.sh
-
-cp -r $WMAROOT/src/css $WMAROOT/data/
-cp -r $WMAROOT/src/images $WMAROOT/data/
-cp -r $WMAROOT/src/js $WMAROOT/data/
-cp -r $WMAROOT/src/maps $WMAROOT/data/
-cp -r $WMAROOT/src/templates $WMAROOT/data/
 
 $WMCOREROOT/bin/wmc-httpd -r -d /tmp -l $log $WMAROOT/etc/wmarch_config_local.py
