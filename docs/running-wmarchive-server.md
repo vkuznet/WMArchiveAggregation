@@ -32,18 +32,18 @@ Follow this procedure to run the WMArchive Server on your local machine or on a 
 	export SPARK_HOME=/usr/lib/spark
 	export SPARK_DIST_CLASSPATH=$(hadoop classpath)
 	```
-	
+
 	Make sure to replace ´USERNAME`.
 
 **Both:**
 
 - Clone [WMArchive](https://github.com/dmwm/WMArchive) (or your fork) and [WMCore](https://github.com/dmwm/WMCore).
 - Optionally copy the `WMArchive/etc/wmarch_config_local.py.example` to `WMArchive/etc/wmarch_config_local.py` to modify configurations. On a remote machine that runs a WMArchive server already, make sure to change the port.
-- Adapt the `./scripts/run_server.sh` and `./scripts/stop_server.sh` scripts to your system and copy/symlink them to the WMArchive directory. Make sure to use the `wmarch_config_local.py` configuration file if necessary.
+- Adapt the [`./scripts/run_server.sh`](scripts/run_server.sh) and [`./scripts/stop_server.sh`](scripts/stop_server.sh) scripts to your system and copy/symlink them to the WMArchive directory. Make sure to use the `wmarch_config_local.py` configuration file if necessary.
 - Run `./run_server.sh` from the WMArchive directory.
-	
-	The script will stop any running server, copy the `./src/{css, images, js, maps, templates}/` directories to `./data/` and then run the server. You will find the log output in the log file you provided in `run_server.sh`.
-	
+
+	The script will stop any running server, possibly copy the `./src/{css, images, js, maps, templates}/` directories to `./data/` and then run the server. You will find the log output in the log file you provided in `run_server.sh`.
+
 **To query the remote server:**
 
 - From your local machine setup an SSH tunnel:
