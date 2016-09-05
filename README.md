@@ -17,7 +17,8 @@ These reports document my weekly progress on the project:
 - [005 - August 5, 2016](005_2016-08-05.md)
 - [006 - August 12, 2016](006_2016-08-12.md)
 - [007 - August 19, 2016](007_2016-08-19.md)
-- [008 - August 26, 2016](006_2016-08-26.md)
+- [008 - August 26, 2016](008_2016-08-26.md)
+- [009 - September 2, 2016](009_2016-09-02.md)
 
 Please refer to these reports also for the following topics:
 - [Running the WMArchive server](docs/running-wmarchive-server.md)

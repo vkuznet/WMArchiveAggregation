@@ -9,13 +9,14 @@ fi
 export WMAROOT=/Users/knl/Projects/wmarchive/WMArchive
 export WMA_STATIC_ROOT=$WMAROOT/src
 export WMCOREROOT=/Users/knl/Projects/wmarchive/WMCore
-export PYTHONPATH=$PYTHONPATH:$WMAROOT/src/python:$WMAROOT/etc:$WMCOREROOT/src/python
+export PYTHONPATH=$WMAROOT/src/python:$WMAROOT/etc:$WMCOREROOT/src/python:$PYTHONPATH
 export PYTHONPATH=$PWD/python:$PYTHONPATH
 log=$PWD/wmarch.log
 if [ -f $log ]; then
    rm $log
 fi
-echo $PYTHONPATH
+
+export WMARCHIVE_ERROR_CODES=$(cat $WMAROOT/data/wmexp.json)
 
 ./stop_server.sh
 
