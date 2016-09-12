@@ -4,7 +4,7 @@ This project is part of the [WMArchive](https://github.com/dmwm/WMArchive) proje
 
 An aggregation pipeline regularly processes the database of FWJRs to collect performance metrics. The web app visualizes the aggregated data and provides flexible filters and options to assist the CMS data operators in assessing the performance of the CMS computing jobs.
 
-![Overview](images/008/responsive_large.png)
+![Overview](images/010/overview.png)
 
 ## Progress Reports
 
@@ -19,6 +19,7 @@ These reports document my weekly progress on the project:
 - [007 - August 19, 2016](007_2016-08-19.md)
 - [008 - August 26, 2016](008_2016-08-26.md)
 - [009 - September 2, 2016](009_2016-09-02.md)
+- [010 - September 9, 2016](010_2016-09-09.md)
 
 Please refer to these reports also for the following topics:
 - [Running the WMArchive server](docs/running-wmarchive-server.md)
@@ -27,3 +28,4 @@ Please refer to these reports also for the following topics:
 - Performance data structure: [Report 007](https://github.com/knly/WMArchiveAggregation/blob/master/007_2016-08-19.md#aggregation-over-all-available-performance-metrics)
 - Accessing the test deployment on `vocms013`: [Report 005](https://github.com/knly/WMArchiveAggregation/blob/master/005_2016-08-05.md#test-deployment)
 - Accessing the prototype deployment on the CMS testbed: [Report 007](https://github.com/knly/WMArchiveAggregation/blob/master/007_2016-08-19.md#prototype-deployment)
+- Aggregation procedure: [Report 010]((https://github.com/knly/WMArchiveAggregation/blob/master/010_2016-09-09.md#aggregation-procedure)

@@ -16,7 +16,7 @@ if [ -f $log ]; then
    rm $log
 fi
 
-export WMARCHIVE_ERROR_CODES=$(cat $WMAROOT/data/wmexp.json)
+export WMARCHIVE_ERROR_CODES=$WMAROOT/data/wmexp.json
 
 ./stop_server.sh
 
