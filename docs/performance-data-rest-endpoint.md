@@ -53,9 +53,3 @@
   - The MongoDB database and collection to use are read from the environment variables `WMARCHIVE_PERF_DB` and `WMARCHIVE_PERF_COLL` and default to `aggregated.performance`.
   - The procedure is based on [MongoDB's aggregation pipeline](https://docs.mongodb.com/manual/core/aggregation-pipeline/).
   - If requested, also `exitCodes` and the complete set of `metrics` is read from the `WMARCHIVE_ERROR_CODES` and `WMARCHIVE_PERF_METRICS` environment variables. Particularly the latter must be set to provide the UI with information on the metrics to present and is discussed in [Report 011](../011_2016-09-16.md#loading-metrics-dynamically).
-
-## Adding scope filters
-
-- Adjust `WMArchive.Service.Data.WMAData.validate` to validate the query argument with a regular expression.
-- Adjust `WMArchive.Storage.MongoIO.MongoStorage.performance` by adding the scope filter to the valid `scope_keys`.
-- Adjust `WMArchive/src/js/models/scope.js` by adding the scope filter to `app.Scope.filters` and a default value to `app.Scope.defaults`.

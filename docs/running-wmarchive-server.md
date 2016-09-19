@@ -24,11 +24,10 @@ Follow this procedure to run the WMArchive Server on your local machine or on a 
 	source /data/srv/current/apps/wmarchive/etc/profile.d/init.sh
 	export JAVA_HOME=/usr/lib/jvm/java
 
-	# for pyspark/numpy and other stuff
+	# Common python packages
 	export PYTHONPATH=$PYTHONPATH:/data/wma/usr/lib/python2.7/site-packages
-	export PYTHONPATH=/afs/cern.ch/user/n/USERNAME/WMArchive/src/python:$PYTHONPATH
 
-	# spark setup
+	# Spark setup
 	export SPARK_HOME=/usr/lib/spark
 	export SPARK_DIST_CLASSPATH=$(hadoop classpath)
 	```
@@ -50,4 +49,4 @@ Follow this procedure to run the WMArchive Server on your local machine or on a 
 	```
 	ssh -L 8888:localhost:REMOTE_WMARCHIVE_PORT USERNAME@vocms013
 	```
-- Open [http://localhost:8888/wmarchive/web/ui](http://localhost:8888/wmarchive/web/ui) in any browser.
+- Open [http://localhost:8888/wmarchive/web/performance](http://localhost:8888/wmarchive/web/performance) in any browser.
