@@ -17,6 +17,7 @@ if [ -f $log ]; then
 fi
 
 export WMARCHIVE_ERROR_CODES=$WMAROOT/data/wmexp.json
+export WMARCHIVE_PERF_METRICS=$WMAROOT/src/maps/metrics.json
 
 ./stop_server.sh
 
