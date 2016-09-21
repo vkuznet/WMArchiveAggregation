@@ -85,6 +85,7 @@ These reports document my weekly progress on the project. Please also refer to t
   - [Loading metrics dynamically](011_2016-09-16.md#loading-metrics-dynamically)
   - [Reading MongoDB database from environment](011_2016-09-16.md#reading-mongodb-database-from-environment)
   - [Project-wide documentation](011_2016-09-16.md#project-wide-documentation)
+  - [Preparations for the presentation](011_2016-09-16.md#preparations-for-the-presentation)
 - [Final presentation](presentation.pdf)
 
 ## Common Tasks
