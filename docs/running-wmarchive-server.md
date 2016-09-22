@@ -30,6 +30,9 @@ Follow this procedure to run the WMArchive Server on your local machine or on a 
 	# Spark setup
 	export SPARK_HOME=/usr/lib/spark
 	export SPARK_DIST_CLASSPATH=$(hadoop classpath)
+
+  # Local WMArchive python packages
+  export PYTHONPATH=/afs/cern.ch/user/n/USERNAME/WMArchive/src/python:$PYTHONPATH
 	```
 
 	Make sure to replace ´USERNAME`.
