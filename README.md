@@ -17,10 +17,15 @@ The WMArchive Performance Service was implemented by [Nils Leif Fischer](https:/
 **Usage and Implementation:**
 - [Performance data REST endpoint](docs/performance-data-rest-endpoint.md)
 - [Performance UI architecture](docs/performance-ui-architecture.md)
+- [Common tasks](docs/common-tasks.md)
 
 **Aggregation and Data**:
 - [Performance data structure](docs/performance-data-structure.md)
 - [Aggregation procedure](docs/aggregation-procedure.md)
+
+**Outlook:**
+- [Pending improvements](docs/pending-improvements.md)
+- [Known issues](docs/known-issues.md)
 
 ## Progress Reports
 
@@ -87,38 +92,3 @@ These reports document my weekly progress on the project. Please also refer to t
   - [Project-wide documentation](011_2016-09-16.md#project-wide-documentation)
   - [Preparations for the presentation](011_2016-09-16.md#preparations-for-the-presentation)
 - [Final presentation](presentation.pdf)
-
-## Common Tasks
-
-### Adding scope filters
-
-- Adjust `WMArchive.Service.Data.WMAData.validate` to validate the additional query argument with a regular expression as detailed in [the Performance data REST endpoint documentation](docs/performance-data-rest-endpoint.md).
-- Adjust `WMArchive.Storage.MongoIO.MongoStorage.performance` by adding the scope filter to the valid `scope_keys`.
-- Adjust `WMArchive/src/js/models/scope.js` by adding the scope filter to `app.Scope.filters` and a default value to `app.Scope.defaults` as detailed in [the Performance UI architecture documentation](docs/performance-ui-architecture.md).
-
-### Changing metrics
-
-- Check the value of the `WMARCHIVE_PERF_METRICS` environment variable at runtime of the server. It may point to `WMArchive/src/maps/metrics.json`.
-- Edit the file with your changes. Refer to [Report 011](011_2016-09-16.md#loading-metrics-dynamically) for details and **make sure to test the server with your changes since the UI relies on this information**.
-
-## Pending improvements
-
-**UI:**
-- [ ] Possibly implement extended sorting functionality
-- [ ] Possibly add legends to visualizations where popover tooltips are not quite sufficient
-- [ ] Improve ordering behaviour of visualization widgets, possibly including support for rearranging.
-- [ ] Include error margins and more statistics in visualizations
-- [ ] Refreshing with latest data in realtime
-- [ ] Option to share individual visualizations and possibly save them as images
-
-**Aggregation procedure:**
-- [ ] Move from the `WMArchive.PySpark.RecordAggregator` aggregation script to the more efficient `WMArchive.Tools.fwjr_aggregator`. Refer to the [Aggregation procedure](docs/aggregation-procedure.md) documentation for detail.
-
-## Known Issues
-
-- [ ] When selecting a scope filter suggestion from the dropdown, the input textfield shows `[object Object]` until it is updated with the fetched data:
-
-  ![Scope filter text issue](images/011/scope-filter-text-issue.png)
-
-  This does not occur when the suggestions are just text values instead of the value/description objects used to display exit code descriptions along the scope filter values.
-- [ ] Overlong labels overlap each other in pie charts.
