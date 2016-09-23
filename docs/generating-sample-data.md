@@ -4,19 +4,15 @@ Follow this procedure to generate sample data from the HDFS and import them to y
 
 - First obtain a Kerberos token and SSH into the `vocms013` node for access to the HDFS:
 
-	```
-	kinit # Obtain a Kerberos token
-	klist # Check current tokens
-	ssh USERNAME@vocms013
-	```
--  This is your mounted AFS user directory. Follow the procedure in `./running-wmarchive-remotely` to setup the WMArchive environment here.
-- Run the `WMArchive/bin/myspark` script with the `RecordAggregator` on the data you want to aggregate:
+  ```
+  kinit # Obtain a Kerberos token
+  klist # Check current tokens
+  ssh USERNAME@vocms013
+```
+- `~` is your mounted AFS user directory. Follow the procedure in [Running the WMArchive Server](./running-wmarchive-server.md) to setup the WMArchive environment here.
+- Use one if the scripts detailed in the [Aggregation procedure](./aggregation-procedure.md) documentation to run the aggregation.
 
-	```
-	./bin/myspark --hdir=hdfs:///cms/wmarchive/test/avro/2016/06/28 --schema=hdfs:///cms/wmarchive/test/avro/schemas/current.avsc --script=src/python/WMArchive/PySpark/RecordAggregator.py
-	```
-
-	The script will store its result in MongoDB and also produce a JSON file with its output.
+	Keep in mind the script will store its result in MongoDB unless you ensured otherwise. It also produces a JSON file with its output.
 
 ---
 

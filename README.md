@@ -1,12 +1,43 @@
 # WMArchive Performance Service
 
-This project is part of the [WMArchive](https://github.com/dmwm/WMArchive) project that stores the CMS workflow and data management _framework job reports (FWJRs)_.
+**CERN Summer Student Programme 2016**
 
-An aggregation pipeline regularly processes the database of FWJRs to collect performance metrics. [The web app](https://cmsweb.cern.ch/wmarchive/web/performance) visualizes the aggregated data and provides flexible filters and options to assist the CMS data operators in assessing the performance of the CMS computing jobs.
+- **Author:** [Nils Leif Fischer](https://github.com/knly/)
+- **Supervisors:**
+  - [Valentin Kuznetsov](http://www.lns.cornell.edu/~vk/contacts.html), Cornell University
+  - [Dr. Dirk Düllmann](https://dirkduellmann.com), CERN
+- **Date:** June 27, 2016 to September 23, 2016
+- **Abstract:**
+
+  This project is part of the [WMArchive](https://github.com/dmwm/WMArchive) project that provides long-term storage for the CMS workflow and data management _framework job reports (FWJRs)_.
+
+  An aggregation pipeline regularly processes the distributed database of FWJRs to collect performance metrics. An [interactive web interface](https://cmsweb.cern.ch/wmarchive/web/performance) visualizes the aggregated data and provides flexible filters and options to assist the CMS data operators in assessing the performance of the CMS computing jobs.
+- **[Original proposal](project-description.pdf)**
+
+
+## Overview
+
+The CMS production agents schedule jobs on the computing grid. When a job finishes it generates a FWJR. The agent then posts this FWJR to the WMArchive REST server that buffers it in a short-term MongoDB database. Then every day the new job reports are converted into a binary Avro file format and migrated to the long-term HDFS storage. This long-term storage is designed to hold millions of these FWJR documents for an indefinite amount of time. This architecture is summarized in the diagram below:
+
+![WMArchive architecture](images/presentation/wmarchive-architecture.png)
+
+The WMArchive Performance Service project is about retrieving this data stored in the long-term archive and visualizing it in a web interface for CMS data operators to investigate.
+
+Of course to access the data in the long-term HDFS storage it is necessary to schedule jobs that retrieve the data, and those can take a significant amount of time. So to provide a responsive user interface I constructed an aggregation pipeline that regularly processes the distributed database of FWJRs to collect performance metrics and cache the aggregated data back in the MongoDB, where it is quickly accessible by the REST server and the UI. So this cache is not data on each individual job report but instead aggregated data grouped only by a number of attributes data operators may want to filter by, so for example the job success state, its host or its processing site.
+
+The second part of the project is to build a web interface for CMS data operators to visualize and investigate the aggregated data. It provides flexible filters and options to assist the CMS data operators in assessing the performance of the CMS computing jobs. The screenshot below shows the result of my work on the performance service frontend this summer that is available on the [CMSWeb Testbed](https://cmsweb-testbed.cern.ch/wmarchive/web/performance).
 
 ![Overview](images/010/overview.png)
 
-The WMArchive Performance Service was implemented by [Nils Leif Fischer](https://github.com/knly/) as part of the [CERN Summer Student Programme 2016](http://hr-dep.web.cern.ch/content/summer-students).
+
+## Technologies
+
+- Big-data storage backend: [Apache Hadoop](http://hadoop.apache.org)
+- Aggregation pipeline: [Apache Spark](https://spark.apache.org), [MongoDB](https://www.mongodb.com), Python
+- REST web server: [WMArchive](https://github.com/dmwm/WMArchive), Python
+- Frontend: JavaScript with [Backbone.js](http://backbonejs.org), HTML, CSS, [Sass](http://sass-lang.com)
+- Visualization: [D3.js](https://d3js.org)
+
 
 ## Documentation
 
@@ -17,10 +48,16 @@ The WMArchive Performance Service was implemented by [Nils Leif Fischer](https:/
 **Usage and Implementation:**
 - [Performance data REST endpoint](docs/performance-data-rest-endpoint.md)
 - [Performance UI architecture](docs/performance-ui-architecture.md)
+- [Common tasks](docs/common-tasks.md)
 
 **Aggregation and Data**:
 - [Performance data structure](docs/performance-data-structure.md)
 - [Aggregation procedure](docs/aggregation-procedure.md)
+
+**Outlook:**
+- [Pending improvements](docs/pending-improvements.md)
+- [Known issues](docs/known-issues.md)
+
 
 ## Progress Reports
 
@@ -85,39 +122,14 @@ These reports document my weekly progress on the project. Please also refer to t
   - [Loading metrics dynamically](011_2016-09-16.md#loading-metrics-dynamically)
   - [Reading MongoDB database from environment](011_2016-09-16.md#reading-mongodb-database-from-environment)
   - [Project-wide documentation](011_2016-09-16.md#project-wide-documentation)
+  - [Preparations for the presentation](011_2016-09-16.md#preparations-for-the-presentation)
 - [Final presentation](presentation.pdf)
 
-## Common Tasks
 
-### Adding scope filters
+## Acknowledgements
 
-- Adjust `WMArchive.Service.Data.WMAData.validate` to validate the additional query argument with a regular expression as detailed in [the Performance data REST endpoint documentation](docs/performance-data-rest-endpoint.md).
-- Adjust `WMArchive.Storage.MongoIO.MongoStorage.performance` by adding the scope filter to the valid `scope_keys`.
-- Adjust `WMArchive/src/js/models/scope.js` by adding the scope filter to `app.Scope.filters` and a default value to `app.Scope.defaults` as detailed in [the Performance UI architecture documentation](docs/performance-ui-architecture.md).
+This project gave me the unique opportunity to both, learn to apply a variety of modern computing technologies to aid in scientific data processing, and experience the extraordinary intercultural and scientific environment at CERN.
 
-### Changing metrics
+For the former I would like to thank the WMArchive group and particularly Valentin Kuznetsov for their professional support and encouragement during this project.
 
-- Check the value of the `WMARCHIVE_PERF_METRICS` environment variable at runtime of the server. It may point to `WMArchive/src/maps/metrics.json`.
-- Edit the file with your changes. Refer to [Report 011](011_2016-09-16.md#loading-metrics-dynamically) for details and **make sure to test the server with your changes since the UI relies on this information**.
-
-## Pending improvements
-
-**UI:**
-- [ ] Possibly implement extended sorting functionality
-- [ ] Possibly add legends to visualizations where popover tooltips are not quite sufficient
-- [ ] Improve ordering behaviour of visualization widgets, possibly including support for rearranging.
-- [ ] Include error margins and more statistics in visualizations
-- [ ] Refreshing with latest data in realtime
-- [ ] Option to share individual visualizations and possibly save them as images
-
-**Aggregation procedure:**
-- [ ] Move from the `WMArchive.PySpark.RecordAggregator` aggregation script to the more efficient `WMArchive.Tools.fwjr_aggregator`. Refer to the [Aggregation procedure](docs/aggregation-procedure.md) documentation for detail.
-
-## Known Issues
-
-- [ ] When selecting a scope filter suggestion from the dropdown, the input textfield shows `[object Object]` until it is updated with the fetched data:
-
-  ![Scope filter text issue](images/011/scope-filter-text-issue.png)
-
-  This does not occur when the suggestions are just text values instead of the value/description objects used to display exit code descriptions along the scope filter values.
-- [ ] Overlong labels overlap each other in pie charts.
+For the latter I must extend my gratitude to my fellow summer students that filled this summer with cultural and personal differences that were never in need of resultion but instead served only to enrich every participant's experience and appreciation of each other. Remarkably, merely assembling a crowd of aspiring scientists to work in CERN's stimulating and resourceful environment suffices to produce these most appreciable qualities, thus elevating them to virtues intrinsic to the scientific community. I am therefore particularly grateful for the plethora of contributors to international scientific institutions such as CERN for enabling researchers to work together in our quest to understand the universe we live in.

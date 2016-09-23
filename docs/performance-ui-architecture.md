@@ -2,7 +2,11 @@
 
 - The performance UI is accessible at the endpoint `/web/performance`, e.g.
 
-  https://cmsweb.cern.ch/wmarchive/web/performance
+  [https://cmsweb.cern.ch/wmarchive/web/performance](https://cmsweb.cern.ch/wmarchive/web/performance)
+
+  or on the test deployment:
+
+  [https://cmsweb-testbed.cern.ch/wmarchive/web/performance](https://cmsweb-testbed.cern.ch/wmarchive/web/performance)
 
 ## Dependencies
 

@@ -5,6 +5,10 @@
 - The WMArchive performance data is exposed by the `/data/performance` endpoint, e.g.:
 
   [https://cmsweb.cern.ch/wmarchive/data/performance?metrics[]=jobstate&axes[]=host](https://cmsweb.cern.ch/wmarchive/data/performance?metrics[]=jobstate&axes[]=host)
+
+  or on the test deployment:
+
+  [https://cmsweb-testbed.cern.ch/wmarchive/data/performance?metrics[]=jobstate&axes[]=host](https://cmsweb-testbed.cern.ch/wmarchive/data/performance?metrics[]=jobstate&axes[]=host)
 - Requests to this endpoint can include the following query arguments:
   - A list of `metrics` where each is a dot-separated key path into the `performance` dictionary in the [performance data structure](./performance-data-structure.md), or `jobstate` or `data.events`.
   - A list of `axes` where each is a key in the `scope` dictionary in the [performance data structure](./performance-data-structure.md).
