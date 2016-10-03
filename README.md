@@ -13,6 +13,7 @@
 
   An aggregation pipeline regularly processes the distributed database of FWJRs to collect performance metrics. An [interactive web interface](https://cmsweb.cern.ch/wmarchive/web/performance) visualizes the aggregated data and provides flexible filters and options to assist the CMS data operators in assessing the performance of the CMS computing jobs.
 - **[Original proposal](project-description.pdf)**
+- **[Report in the CERN CDS](https://cds.cern.ch/record/2217918)**
 
 
 ## Overview
